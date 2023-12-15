@@ -1,0 +1,26 @@
+<!-- api/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Social Network{% endblock %}</title>
+    <!-- Add your stylesheets, scripts, or other head content here -->
+</head>
+<body>
+
+    <header>
+        <h1>{% block header %}My Social Network{% endblock %}</h1>
+        <!-- Add navigation or other header content here -->
+    </header>
+    <a href="{% url 'home' %}">Home</a>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+
+</body>
+</html>
