@@ -28,6 +28,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            print(f"Saving user {user}: {request}")
             return redirect('home')  # Update 'home' with the URL name of your home page
         else:
             print(form.errors)
@@ -55,6 +56,6 @@ class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
 
 
-@login_required
+@login_required(login_url="login")
 def home(request):
     return render(request, 'home.html')
